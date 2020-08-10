@@ -15,7 +15,6 @@ class Board extends Component {
         this.keyInput = this.keyInput.bind(this);
     }
 
-
     select(id) {
         if (id === -1) {
             if (this.state.selected !== -1) {
@@ -40,7 +39,7 @@ class Board extends Component {
     keyInput(e) {
         if (e.keyCode >= 65 && e.keyCode <= 90 && this.state.selected !== -1) {
             let newchars = this.state.chars;
-            newchars[this.state.selected] = e.key;
+            newchars[this.state.selected] = (e.key).toLowerCase();
             this.setState({
                 chars: newchars,
             });
@@ -49,15 +48,26 @@ class Board extends Component {
             } else {
                 this.select(-1);
             }
+            this.props.callback(this.state.chars);
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener('keydown', this.keyInput);
     }
 
     componentWillUnmount() {
         document.removeEventListener('keydown', this.keyInput)
+    }
+
+    componentDidUpdate() {
+        if (this.props.clearing) {
+            this.props.clear();
+            this.setState({
+                chars: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+            });
+            this.select(0);
+        }
     }
 
     render() {

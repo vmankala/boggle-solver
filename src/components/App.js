@@ -6,7 +6,7 @@ class App extends Component {
   render() {
       return (
         <React.Fragment>
-          <br/> <br/> <br/>
+          <br/> <br/>
           <Game/>
         </React.Fragment>
       );

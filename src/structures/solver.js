@@ -13,7 +13,11 @@ export default class Solver {
                 }());
             }
         }
-        return solutions;
+        let arr = Array.from(solutions);
+        arr.sort((a, b) => {
+            return (b.length - a.length) || a.localeCompare(b);
+        });
+        return arr;
     }
 
     solveCell(board, word, x, y, visited) {
