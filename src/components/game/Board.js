@@ -49,6 +49,22 @@ class Board extends Component {
                 this.select(-1);
             }
             this.props.callback(this.state.chars);
+        } else if (e.keyCode === 38) {
+            if (this.state.selected !== -1 && this.state.selected > 3) {
+                this.select(this.state.selected - 4);
+            }
+        } else if (e.keyCode === 39) {
+            if (this.state.selected !== -1 && this.state.selected % 4 !== 3) {
+                this.select(this.state.selected + 1);
+            }
+        } else if (e.keyCode === 37) {
+            if (this.state.selected !== -1 && this.state.selected % 4 !== 0) {
+                this.select(this.state.selected - 1);
+            }
+        } else if (e.keyCode === 40) {
+            if (this.state.selected !== -1 && this.state.selected < 12) {
+                this.select(this.state.selected + 4);
+            }
         }
     }
 
