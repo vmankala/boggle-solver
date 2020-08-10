@@ -10,10 +10,10 @@ import {dict} from './structures/dictionary';
 
 var trie = new Trie();
 var board = new Board([
-  ['a', 'p', 'f', 'e'],
-  ['g', 'g', 'p', 'n'],
-  ['u', 'o', 'l', 'c'],
-  ['d', 'r', 'e', 'e']
+  ['m', 'l', 'n', 'w'],
+  ['e', 'n', 'o', 'h'],
+  ['e', 'i', 'o', 'a'],
+  ['r', 'c', 'a', 'i']
 ]);
 
 var date = Date.now();

@@ -1,19 +1,13 @@
 import React, {Component} from 'react';
 
-import Header from './header/Header';
-import Board from './board/Board';
+import Game from './game/Game';
 
 class App extends Component {
-  constructor() {
-      super();
-      // todo: state
-  }
-
   render() {
       return (
         <React.Fragment>
-          <Header/>
-          <Board/>
+          <br/> <br/> <br/>
+          <Game/>
         </React.Fragment>
       );
   }
