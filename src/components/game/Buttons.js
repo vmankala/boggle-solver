@@ -8,11 +8,11 @@ class Buttons extends Component {
         this.clear = this.clear.bind(this);
     }
 
-    submit() {
+    submit() { // submit button - callback to parent
         this.props.solve();
     }
 
-    clear() {
+    clear() { // clear button - callback to parent
         this.props.clear();
     }
 

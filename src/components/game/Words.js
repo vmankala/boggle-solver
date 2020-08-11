@@ -3,7 +3,7 @@ import {majorScale, Pane, Table} from 'evergreen-ui';
 
 import Word from './Word';
 
-class Words extends Component {
+class Words extends Component { // represents the words panel
     render() {
         return (
             <Pane height={majorScale(65)} width={majorScale(50)} borderBottom>

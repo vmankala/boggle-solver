@@ -7,7 +7,7 @@ class TrieNode {
 export default class Trie {
     constructor() {
         this.root = new TrieNode();
-        this.leaf = new TrieNode();
+        this.leaf = new TrieNode(); // used to represent the end of a word
     }
 
     addWord(word) {
@@ -30,10 +30,10 @@ export default class Trie {
         for (let i = 0; i < word.length; i++) {
             if (curnode.children[word[i]]) {
                 curnode = curnode.children[word[i]];
-            } else {
+            } else { // word does not exist in trie
                 return [false, false];
             }
         }
-        return [!!curnode.children['*'], !!(Object.keys(curnode.children).length - (curnode.children['*'] ? 1 : 0))];
+        return [!!curnode.children['*'], !!(Object.keys(curnode.children).length - (curnode.children['*'] ? 1 : 0))]; // finds valid word by checking for * child, finds valid prefix by checking for zero children (not including *)
     }
 }
