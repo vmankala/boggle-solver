@@ -24,7 +24,7 @@ export default class Board {
         return this.board;
     }
 
-    checkCell(x, y) {
+    checkCell(x, y) { // check if cell is in bounds and not empty
         return x >= 0 && x < this.board[0].length && y >= 0 && y < this.board.length && this.board[y][x] !== '';
     }
 

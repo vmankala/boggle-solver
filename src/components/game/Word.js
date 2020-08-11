@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {majorScale, Table} from 'evergreen-ui';
 
 class Word extends Component {
-    score(length) {
+    score(length) { // Boggle score table
         if (length >= 8)
             return 11;
         else if (length === 7)
@@ -15,7 +15,7 @@ class Word extends Component {
             return 1;
     }
 
-    render() {
+    render() { // generate row for each word
         const wordlist = this.props.list.map((word, index) => 
             <Table.Row key={index}>
                 <Table.TextCell textProps={{size: 500}}>

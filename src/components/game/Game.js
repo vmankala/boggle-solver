@@ -20,7 +20,7 @@ class Game extends Component {
         this.clearChars = this.clearChars.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount() { // set up the trie
         this.trie = new Trie();
         this.board = new BoardStruct();
 
@@ -32,13 +32,13 @@ class Game extends Component {
         console.log('done creating dictionary in ' + (Date.now() - date) + ' ms');
     }
 
-    getBoard(data) {
+    getBoard(data) { // callback passed to Board.js to collect the board
         this.setState({
             board1d: data
         });
     }
 
-    runSolver() {
+    runSolver() { // callback to submit button in Buttons.js
         let date = Date.now();
 
         for (let i = 0; i < this.state.board1d.length; i++) {
@@ -52,14 +52,14 @@ class Game extends Component {
         console.log('done generating solutions in ' + (Date.now() - date) + ' ms');
     }
 
-    clearWords() {
+    clearWords() { // callback to Words.js panel - clears the panel
         this.setState({
             solutions: [],
             clearing: true
         });
     }
 
-    clearChars() {
+    clearChars() { // callback to Board.js panel - clears the baord
         this.setState({
             clearing: false
         });
