@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7e31d8edd797efe501b417baa58cf0ab",
+    "revision": "0f75c71e75753d757381b002cf76a1ad",
     "url": "/boggle-solver/index.html"
   },
   {
